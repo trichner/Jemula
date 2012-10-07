@@ -132,7 +132,7 @@ public class JEStatEvalThrp extends JEStatEval {
 			this.theOutWriter = new PrintWriter(new FileWriter(this.theFullFileName, true));
 			this.theOutWriter.println(
 					this.theEvalList1.elementAt(this.theEvalList1.size() - 1).toString() + "\t" +
-					this.theEvalList2.elementAt(this.theEvalList2.size() - 1).toString() + "\t" +
+					//this.theEvalList2.elementAt(this.theEvalList2.size() - 1).toString() + "\t" +
 					this.theEvalList3.elementAt(this.theEvalList3.size() - 1).toString() + "\t" +
 					this.theEvalList4.elementAt(this.theEvalList4.size() - 1).toString() + "\t" +
 					this.theEvalList5.elementAt(this.theEvalList5.size() - 1).toString() + "\t" +
