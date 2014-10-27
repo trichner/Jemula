@@ -125,12 +125,6 @@ public class JEStatEvalDelay extends JEStatEval {
 
 		this.theEvalList1.addElement(anEvalTime_ms);
 
-		if (this.theSampleList1.size() > 0) {
-			this.theEvalList2.addElement(this.theSampleList1.get(this.theSampleList1.size() - 1));
-		} else {
-			this.theEvalList2.addElement(Double.NaN);
-		}
-
 		this.theEvalList3.addElement(aNumOfSamples);
 		this.theEvalList4.addElement(this.theSum1);
 		this.theEvalList5.addElement(anAverage3);

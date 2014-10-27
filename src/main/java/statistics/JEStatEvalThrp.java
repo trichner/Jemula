@@ -112,11 +112,6 @@ public class JEStatEvalThrp extends JEStatEval {
 		}
 		
 		this.theEvalList1.addElement(anEvalTime_ms);
-		if (this.theSampleList1.size() > 0) {
-			this.theEvalList2.addElement(this.theSampleList1.get(this.theSampleList1.size() - 1));
-		} else {
-			this.theEvalList2.addElement(Double.NaN);
-		}
 		
 		
 		this.theEvalList3.addElement(aNumberOfSamples);

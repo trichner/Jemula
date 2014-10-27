@@ -34,18 +34,13 @@
 
 package statistics;
 
+import kernel.JEmula;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
-
-import kernel.JEmula;
+import java.util.*;
 
 /**
  * @author Stefan Mangold
@@ -92,17 +87,17 @@ public abstract class JEStatEval extends JEmula {
 
 	protected JEStatEval(String aPath, String aFileName, String aHeaderLine) {
 
-		this.theSampleList1 = new ArrayList<Number>();
-		this.theSampleList2 = new ArrayList<Number>();
-		this.theSampleList3 = new ArrayList<Number>();
-		this.theEvalList1 = new Vector<Number>();
-		this.theEvalList2 = new Vector<Number>();
-		this.theEvalList3 = new Vector<Number>();
-		this.theEvalList4 = new Vector<Number>();
-		this.theEvalList5 = new Vector<Number>();
-		this.theEvalList6 = new Vector<Number>();
-		this.theEvalList7 = new Vector<Number>();
-		this.theEvalList8 = new Vector<Number>();
+		this.theSampleList1 = new ArrayList<>();
+		this.theSampleList2 = new ArrayList<>();
+		this.theSampleList3 = new ArrayList<>();
+		this.theEvalList1 = new Vector<>();
+		this.theEvalList2 = new Vector<>();
+		this.theEvalList3 = new Vector<>();
+		this.theEvalList4 = new Vector<>();
+		this.theEvalList5 = new Vector<>();
+		this.theEvalList6 = new Vector<>();
+		this.theEvalList7 = new Vector<>();
+		this.theEvalList8 = new Vector<>();
 		this.theSum1 = 0;
 		this.theSum2 = 0.0;
 		this.theSum3 = 0.0;
@@ -114,7 +109,7 @@ public abstract class JEStatEval extends JEmula {
 		if (!file.exists()) {
 			// directory does not exist
 			try {
-				this.message("creating new directory " + this.thePath2File, 100);
+				this.message("creating new directory '" + this.thePath2File + "'", 100);
 				file.mkdirs();
 			} catch (Exception e) {
 				this.error("could not create the result directory " + this.thePath2File);
