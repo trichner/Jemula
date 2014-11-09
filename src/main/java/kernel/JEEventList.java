@@ -43,14 +43,14 @@ import java.util.Map;
 
 public class JEEventList {
 	
-	private Map<Double, LinkedList<JEEvent>> bucketMap;
-	private List<Double> bucketOrder;
+	private Map<Long, LinkedList<JEEvent>> bucketMap;
+	private List<Long> bucketOrder;
 	private LinkedList<JEEvent> current;
-	private double last = -1;
+	private long last = -1;
 
 	public JEEventList() {
-		bucketMap = new HashMap<Double, LinkedList<JEEvent>>();
-		bucketOrder = new ArrayList<Double>();
+		bucketMap = new HashMap<Long, LinkedList<JEEvent>>();
+		bucketOrder = new ArrayList<Long>();
 		current = null;
 	}
 	
@@ -58,7 +58,7 @@ public class JEEventList {
 		return bucketMap.isEmpty();
 	}
 	
-	public void add(Double time, JEEvent event) {
+	public void add(long time, JEEvent event) {
 		LinkedList<JEEvent> bucket = bucketMap.get(time); 
 		if (bucket!=null){
 			bucket.add(event);
@@ -96,7 +96,7 @@ public class JEEventList {
 	
 	public void remove(JEEvent event) {
 		if (event!=null) {
-			double time = event.getScheduledTime().getTime();
+			long time = event.getScheduledTime().getTime();
 			LinkedList<JEEvent> bucket = bucketMap.get(time);
 			if (bucket != null) {
 				bucket.remove(event);

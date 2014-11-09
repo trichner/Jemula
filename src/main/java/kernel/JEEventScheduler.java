@@ -162,7 +162,7 @@ public final class JEEventScheduler extends JEmula {
 					}
 					eventStats.put(aNextEvent.getName(), count);
 				}
-				double aProgress = this.now.dividedby(this.theEmulationEnd) * 100.0;
+				double aProgress = (this.now.getTimeMs() / this.theEmulationEnd.getTimeMs()) * 100.0;
 				if (aProgress >= aNextMessage) {
 					Date date = new Date();
 					long elapsedTime = date.getTime() - this.DateOfStart;

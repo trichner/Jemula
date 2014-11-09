@@ -40,10 +40,10 @@ package kernel;
  */
 public final class JETime implements Comparable<JETime> {
 	
-	private double time;
+	private long time;
 
 	public JETime() {
-		this.time = 0.0;
+		this.time = 0;
 	}
 
 	/**
@@ -58,6 +58,10 @@ public final class JETime implements Comparable<JETime> {
 	 * @param aUnit
 	 */
 	public JETime(double aTime) {
+		this.time = (long)(aTime*1000);
+	}
+	
+	public JETime(long aTime) {
 		this.time = aTime;
 	}
 
@@ -92,19 +96,19 @@ public final class JETime implements Comparable<JETime> {
 	 */
 	
 	public double getTimeMs() {
-		return this.time;
+		return this.time/1000.0;
 	}
 	
-	public double getTime(){
+	public long getTime(){
 		return this.time;
 	}
 	
 	public double getTimeS() {
-		return this.time / 1000.0;
+		return this.time / 1000000.0;
 	}
 	
 	public void setTime(Double time) {
-		this.time = time;
+		this.time = (long)(time*1000);
 	}
 	
 	/**
@@ -119,16 +123,8 @@ public final class JETime implements Comparable<JETime> {
 	 * @param aFactor
 	 * @return time
 	 */
-	public JETime times(Integer aFactor) {
+	public JETime times(long aFactor) {
 		return new JETime(this.time*aFactor);
-	}
-
-	/**
-	 * @param aFactor
-	 * @return time
-	 */
-	public JETime times(Double aFactor) {
-		return new JETime(aFactor*this.time);
 	}
 
 	/**
@@ -139,7 +135,7 @@ public final class JETime implements Comparable<JETime> {
 		return new JETime(this.time-aTime1.getTime());
 	}
 
-	public double dividedby(JETime aTime1) {
+	public long dividedby(JETime aTime1) {
 		return this.time/aTime1.getTime();
 	}
 
@@ -159,7 +155,7 @@ public final class JETime implements Comparable<JETime> {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%.3f",this.time)+" ms";
+		return String.format("%.3f",this.getTimeMs())+" ms";
 	}
 
 	@Override
